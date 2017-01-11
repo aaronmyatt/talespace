@@ -37,8 +37,8 @@ Change database settings in your setting file
 ```Python
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'boost',
-        'USER': 'boostuser',
+        'NAME': 'talespace',
+        'USER': 'talespace@localhost',
         'PASSWORD': '123',
         'HOST': 'localhost',
         'PORT': '',
