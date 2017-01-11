@@ -25,7 +25,7 @@ Run `sudo mysql -u root` then create database and user
 
 ```
 CREATE DATABASE talespace CHARACTER SET UTF8;
-CREATE USER talespace@localhost IDENTIFIED BY '123';
+CREATE USER talespace@localhost IDENTIFIED BY 'yourpassword';
 GRANT ALL PRIVILEGES ON talespace.* TO talespace@localhost;
 FLUSH PRIVILEGES;
 ```
@@ -37,9 +37,9 @@ Change database settings in your setting file
 ```Python
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'boost',
-        'USER': 'boostuser',
-        'PASSWORD': '123',
+        'NAME': 'talespace',
+        'USER': 'talespace@localhost',
+        'PASSWORD': 'yourpassword',
         'HOST': 'localhost',
         'PORT': '',
     }
