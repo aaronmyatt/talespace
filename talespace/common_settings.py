@@ -11,6 +11,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'talespace',
+#         'USER': 'talespaceuser',
+#         'PASSWORD': '123',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Application definition
 
@@ -67,6 +77,7 @@ TEMPLATES = [
     },
 ]
 
+# for testing purpose
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = (
@@ -113,8 +124,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/static/',
+]
 
 STATIC_URL = '/static/'
