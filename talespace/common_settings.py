@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = [
 
 # Overriding default serializer
 REST_AUTH_REGISTER_SERIALIZERS = {
-        'REGISTER_SERIALIZER': 'apps.auth.serializers.RegisterSerializer',
+    'REGISTER_SERIALIZER': 'apps.auth.serializers.RegisterSerializer',
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
