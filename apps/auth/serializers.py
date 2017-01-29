@@ -1,11 +1,20 @@
 from rest_framework import serializers
 
 from allauth.account import app_settings as allauth_settings
-from allauth.utils import email_address_exists
 from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from allauth.utils import (email_address_exists,
-                               get_username_max_length)
+                           get_username_max_length)
+from django.utils.translation import ugettext_lazy as _
+
+
+from rest_auth.serializers import LoginSerializer as RestAuthLoginSerializer
+
+
+class LoginSerializer(RestAuthLoginSerializer):
+    username = serializers.CharField(required=False, allow_blank=True)
+    password = serializers.CharField(style={'input_type': 'password'})
+
 
 class RegisterSerializer(serializers.Serializer):
     first_name = serializers.CharField(required=True, write_only=True)
