@@ -1,7 +1,7 @@
 from .common_settings import *
 
-AUTHENTICATION_METHOD = 'username'
-
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
 
 DATABASES = {
     'default': {

@@ -6,12 +6,13 @@ from rest_framework.test import APIClient
 class TestLoginUrl(TestCase):
     def setUp(self):
         user = get_user_model().objects.create(username='test')
+        user.email = "test@test.com"
         user.set_password('test')
         user.save()
 
     def test_login(self):
         login_details = {
-            'username': 'test',
+            'email': 'test@test.com',
             'password': 'test'
         }
         res = APIClient().post('/auth/login/', login_details, format='json')
@@ -29,7 +30,8 @@ class TestRegisterUrl(TestCase):
             'username': 'test',
             'password1': '12345qwert',
             'password2': '12345qwert',
-            'email': 'test@test.com'
+            'email': 'test@test.com',
+            'user_type': 'mission'  # or volunteer
         }
         res = APIClient().post('/auth/registration/', register_details, format='json')
         self.assertEqual(res.status_code, 201)

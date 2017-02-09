@@ -52,11 +52,6 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Overriding default serializer
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'apps.auth.serializers.RegisterSerializer',
-}
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'talespace.urls'
@@ -124,15 +119,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/static/',
+    # os.path.join(BASE_DIR, "static"),
+    # '/static/',
 ]
 
 STATIC_URL = '/static/'
