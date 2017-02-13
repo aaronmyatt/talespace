@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'rest_auth',
     'corsheaders',
-    'apps.authentication',
+    'apps.users'
 ]
 
 MIDDLEWARE_CLASSES = [
