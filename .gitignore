@@ -2,4 +2,5 @@ __pycache__
 talespace/__pycache__/
 
 /talespace/dev_settings.py
+/talespace/settings.py
 .idea
