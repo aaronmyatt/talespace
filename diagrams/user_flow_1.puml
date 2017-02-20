@@ -1,0 +1,20 @@
+start
+:Login;
+:Redirect to profile;
+:Navigate to Mission List;
+:Select Mission;
+:Apply for Mission;
+if (user_payed) then (yes)
+  :Email mission;
+else (no)
+  :Redirect to Payment page;
+  :Process Payment;
+  :Email Mission;
+endif
+if(application_accepted) then (yes)
+  :Email confirmation;
+else (no)
+  :Email rejection;
+endif
+:Update user profile;
+stop
