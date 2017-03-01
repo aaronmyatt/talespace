@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Missions
+
+
+class MissionsAdmin(admin.StackedInline):
+    model = Missions
+    can_delete = False
+    verbose_name_plural = 'Missions'
+
+
+admin.site.register(Missions)
