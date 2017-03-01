@@ -1,7 +1,7 @@
-import json
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
-from django.contrib.auth import get_user_model
+
 from .models import Missions
 
 
@@ -29,10 +29,19 @@ class TestMissionApi(TestCase):
         response = client.get('/mission/{}/'.format(str(mission.id)))
         self.assertEqual(response.data['name'], 'TestMission')
 
-    def test_post_updates_existing_record(self):
+    def test_post_creates_new_record(self):
         client = APIClient()
-        response = client.post('/mission/1/', data=json.dumps({'name':'BetterMission'}))
+        url = '/mission/'
+        response = client.post(url, data={'name': 'BetterMission',
+                                          'description': 'ANewMission',
+                                          'user': get_user_model().objects.first().id})
+        self.assertEqual(Missions.objects.count(), 2)
+
+    def test_put_updates_existing_record(self):
         mission = Missions.objects.first()
+        client = APIClient()
+        url = '/mission/{}/'.format(str(mission.id))
+        response = client.put(url, data={'name': 'BetterMission'})
         self.assertEqual(mission.name, 'BetterMission')
 
     def test_delete_removes_one(self):
