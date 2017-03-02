@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'apps.users',
     'apps.missions',
+    'apps.skills',
 ]
 
 MIDDLEWARE_CLASSES = [
