@@ -3,6 +3,8 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from apps.skills.models import Skills
+
 
 class UserDetails(models.Model):
 
@@ -21,6 +23,16 @@ class UserDetails(models.Model):
     interests    = models.TextField()
     languages    = models.TextField()
     website      = models.URLField()
+    skills = models.ManyToManyField(Skills, through='UserSkills')
+
+
+class UserSkills(models.Model):
+    CHOICES = [(i, i) for i in range(6)]
+
+    user = models.ForeignKey(UserDetails)
+    skill = models.ForeignKey(Skills)
+    level = models.IntegerField(choices=CHOICES)
+
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

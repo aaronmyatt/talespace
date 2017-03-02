@@ -8,7 +8,7 @@ from apps.users.models import UserDetails
 class UserDetailsInline(admin.StackedInline):
     model = UserDetails
     can_delete = False
-    verbose_name_plural = 'Missions'
+    verbose_name_plural = 'Users Details'
 
 
 class UserAdmin(BaseUserAdmin):
