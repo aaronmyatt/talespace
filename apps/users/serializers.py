@@ -1,7 +1,9 @@
 from django.contrib.auth import get_user_model
-from apps.users.models import UserDetails
 from rest_auth.registration import serializers as rest_auth_serializers
 from rest_framework import serializers
+
+from apps.skills.models import Skills
+from apps.users.models import UserDetails, UserSkills
 
 UserModel = get_user_model()
 
@@ -30,8 +32,21 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ('email', )
 
 
+class SkillsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Skills
+        fields = '__all__'
+
+
+class UserSkillsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSkills
+        fields = ['user', 'skill', 'level']
+
+
 class UserDetailsSerializer(serializers.ModelSerializer):
     user = UserSerializer()
+    skills = UserSkillsSerializer(source='userskills_set', many=True, read_only=True)
 
     class Meta:
         model = UserDetails

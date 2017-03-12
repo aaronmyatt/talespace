@@ -34,7 +34,6 @@ class UserSkills(models.Model):
     level = models.IntegerField(choices=CHOICES)
 
 
-
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_profile(sender, created, instance, **kw):
     if created:

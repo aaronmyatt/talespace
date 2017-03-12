@@ -1,0 +1,42 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "test-admin",
+      "email": "test-admin@user.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "test-mission",
+      "email": "test-mission@user.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "missions.missions",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "someMission",
+      "description": "a cool place"
+    }
+  },
+  {
+    "model": "missions.missions",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "name": "someMission",
+      "description": "a cool place"
+    }
+  }
+]

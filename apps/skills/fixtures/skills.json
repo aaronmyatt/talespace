@@ -1,0 +1,26 @@
+[
+  {
+    "model": "skills.skills",
+    "pk": 1,
+    "fields": {
+      "name": "Woodcraft",
+      "description": "A woody activity"
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 2,
+    "fields": {
+      "name": "Programming",
+      "description": "Staring intensely at a computer"
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 3,
+    "fields": {
+      "name": "Cooking",
+      "description": "Nom nom nom"
+    }
+  }
+]

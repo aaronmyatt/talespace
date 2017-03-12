@@ -1,26 +1,23 @@
-from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
+
 from apps.users.models import UserDetails
 
 
 class TestLoginUrl(TestCase):
-    def setUp(self):
-        user = get_user_model().objects.create(username='test')
-        user.email = "test@test.com"
-        user.set_password('test')
-        user.save()
+    fixtures = ['users.json']
 
     def test_login(self):
         login_details = {
-            'email': 'test@test.com',
-            'password': 'test'
+            'email': 'test-admin@user.com',
+            'password': '1234qwer'
         }
         res = APIClient().post('/auth/login/', login_details, format='json')
         self.assertEqual(res.status_code, 200)
 
 
 class TestRegisterUrl(TestCase):
+    fixtures = ['users.json']
     url = '/auth/registration/'
 
     def setUp(self):
@@ -46,13 +43,12 @@ class TestRegisterUrl(TestCase):
         details = self.details.copy()
         details['user_type'] = ''
         APIClient().post(self.url, details, format='json')
-        ud = UserDetails.objects.first()
+        ud = UserDetails.objects.get(user__username='test')
         self.assertEqual(ud.user_type, 'v')
 
     def test_sets_user_type_to_mission(self):
         details = self.details.copy()
         details['user_type'] = 'm'
         APIClient().post(self.url, details, format='json')
-        ud = UserDetails.objects.first()
+        ud = UserDetails.objects.get(user__username=details['username'])
         self.assertEqual(ud.user_type, 'm')
-

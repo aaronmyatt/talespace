@@ -1,0 +1,93 @@
+[
+  {
+    "model": "users.userdetails",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "user_type": "m",
+      "company_name": "",
+      "phone": "",
+      "school": "",
+      "description": "",
+      "experience": "",
+      "interests": "",
+      "languages": "",
+      "website": ""
+    }
+  },
+  {
+    "model": "users.userdetails",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "user_type": "m",
+      "company_name": "",
+      "phone": "",
+      "school": "",
+      "description": "",
+      "experience": "",
+      "interests": "",
+      "languages": "",
+      "website": ""
+    }
+  },
+  {
+    "model": "users.userdetails",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "user_type": "v",
+      "company_name": "",
+      "phone": "",
+      "school": "",
+      "description": "",
+      "experience": "",
+      "interests": "",
+      "languages": "",
+      "website": ""
+    }
+  },
+  {
+    "model": "users.userskills",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "skill": 1,
+      "level": 5
+    }
+  },
+  {
+    "model": "users.userskills",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "skill": 1,
+      "level": 5
+    }
+  },
+  {
+    "model": "users.userskills",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "skill": 1,
+      "level": 5
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 1,
+    "fields": {
+      "name": "Some Skill",
+      "description": "Some description"
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 1,
+    "fields": {
+      "name": "Programming",
+      "description": "Staring intently at a screen"
+    }
+  }
+]
