@@ -84,7 +84,7 @@
   },
   {
     "model": "skills.skills",
-    "pk": 1,
+    "pk": 2,
     "fields": {
       "name": "Programming",
       "description": "Staring intently at a screen"

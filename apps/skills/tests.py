@@ -20,7 +20,7 @@ class TestSkillApi(TestCase):
         skill = Skills.objects.first()
         client = APIClient()
         response = client.get('/skill/{}/'.format(str(skill.id)))
-        self.assertEqual(response.data['name'], 'TestMission')
+        self.assertEqual(response.data['name'], 'TestSkill')
 
     def test_post_creates_new_record(self):
         client = APIClient()
@@ -33,6 +33,7 @@ class TestSkillApi(TestCase):
         client = APIClient()
         url = '/skill/{}/'.format(str(skill.id))
         response = client.put(url, data={'name': 'BetterSkill'})
+        skill = Skills.objects.first()
         self.assertEqual(skill.name, 'BetterSkill')
 
     def test_delete_removes_one(self):

@@ -39,6 +39,9 @@ class SkillsSerializer(serializers.ModelSerializer):
 
 
 class UserSkillsSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(queryset=UserDetails.objects.all(),
+                                              required=False)
+
     class Meta:
         model = UserSkills
         fields = ['user', 'skill', 'level']

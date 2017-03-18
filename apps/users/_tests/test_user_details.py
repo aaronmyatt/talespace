@@ -1,6 +1,5 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
-
 from ..models import UserDetails
 
 
@@ -20,6 +19,7 @@ class TestAuthUserApi(TestCase):
         self.assertEqual(response.data['user']['username'], 'test-admin')
 
     def test_put_updates_user_details_model(self):
-        response = self.client.put('/auth/user/', data={"school": "educational"})
+        data = {"school": "educational"}
+        response = self.client.put('/auth/user/', data=data)
         user = UserDetails.objects.first()
         self.assertEqual(user.school, 'educational')
