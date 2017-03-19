@@ -1,6 +1,6 @@
 
 # Talespace
-Talespace NGO website
+Talespace NGO website API
 
 ## Setting up Development Enviornmet
 
@@ -10,13 +10,14 @@ Talespace NGO website
         * `virtualenv env_name -p python3`
     * Conda
         * `conda-env create -f env.yaml`
-* install dependencies with pip `pip install -r requirements.txt`
+* install dependencies with using `pip install -r requirements.txt`
 
-#### Setting Database
+#### Setting up the Database
 
  * Ubuntu 16.04
 
-    * install Mariadb server and client `sudo apt-get install mariadb-client mariadb-server`
+    * install Mariadb server and client `sudo apt-get install mariadb-client mariadb-server` / `brew install mariadb`
+    *if on linux:*
     * install `sudo apt-get install libmysqlclient-dev`
 
 ### DB Configuration
@@ -44,3 +45,12 @@ Change database settings in your setting file
         'PORT': '',
     }
 ```
+
+### Django ORM Migrations
+
+Load all Django app models. From the root of the app run:
+`./manage.py makemigrations`
+`./manage.py migrate`
+
+### Runserver
+`./manage.py runserver`
