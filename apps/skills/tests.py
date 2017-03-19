@@ -39,4 +39,4 @@ class TestSkillApi(TestCase):
     def test_delete_removes_one(self):
         client = APIClient()
         response = client.delete('/skill/1/')
-        self.assertEqual(Skills.objects.count(), 0)
+        self.assertEqual(Skills.objects.count(), 1)
