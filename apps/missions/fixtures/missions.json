@@ -1,27 +1,5 @@
 [
   {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "username": "test-admin",
-      "email": "test-admin@user.com",
-      "is_staff": true,
-      "is_superuser": true,
-      "is_active": true
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-      "username": "test-mission",
-      "email": "test-mission@user.com",
-      "is_staff": false,
-      "is_superuser": false,
-      "is_active": true
-    }
-  },
-  {
     "model": "missions.missions",
     "pk": 1,
     "fields": {
@@ -35,8 +13,42 @@
     "pk": 2,
     "fields": {
       "user": 1,
-      "name": "someMission",
+      "name": "an important mission",
       "description": "a cool place"
+    }
+  },
+  {
+    "model": "missions.missionrequiresskills",
+    "pk": 1,
+    "fields": {
+      "mission": 1,
+      "skill": 1,
+      "level": 5
+    }
+  },
+  {
+    "model": "missions.missionrequiresskills",
+    "pk": 2,
+    "fields": {
+      "mission": 2,
+      "skill": 1,
+      "level": 5
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 1,
+    "fields": {
+      "name": "Some Skill",
+      "description": "Some description"
+    }
+  },
+  {
+    "model": "skills.skills",
+    "pk": 2,
+    "fields": {
+      "name": "Programming",
+      "description": "Staring intently at a screen"
     }
   }
 ]
