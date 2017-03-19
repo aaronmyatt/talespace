@@ -20,6 +20,6 @@ class TestAuthUserApi(TestCase):
 
     def test_put_updates_user_details_model(self):
         data = {"school": "educational"}
-        response = self.client.put('/auth/user/', data=data)
+        self.client.put('/auth/user/', data=data)
         user = UserDetails.objects.first()
         self.assertEqual(user.school, 'educational')
