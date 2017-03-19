@@ -36,6 +36,8 @@ class UserSkills(models.Model):
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_profile(sender, created, instance, **kw):
+
+    # kw.get('raw'... ensures the signal is not fired when creating models manually
     if created and not kw.get('raw', False):
         ud = UserDetails()
         ud.user = instance
