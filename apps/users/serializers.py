@@ -7,6 +7,7 @@ from apps.users.models import UserDetails, UserSkills
 
 UserModel = get_user_model()
 
+
 class UserRegistrationSerializer(rest_auth_serializers.RegisterSerializer):
     user_type = serializers.CharField(max_length=1,
                                       default='v',
